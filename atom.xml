@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-05-02T23:00:21+01:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Kevin Boyle]]></title>
+  <link href="http://kevinboyle.ie/atom.xml" rel="self"/>
+  <link href="http://kevinboyle.ie/"/>
+  <updated>2013-05-12T16:59:48+01:00</updated>
+  <id>http://kevinboyle.ie/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Kevin Boyle]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
   <entry>
-    <title type="html"><![CDATA[title]]></title>
-    <link href="http://yoursite.com/blog/2013/05/02/title/"/>
-    <updated>2013-05-02T22:45:00+01:00</updated>
-    <id>http://yoursite.com/blog/2013/05/02/title</id>
-    <content type="html"><![CDATA[
+    <title type="html"><![CDATA[Can HTML5 Replace WPF?]]></title>
+    <link href="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/"/>
+    <updated>2013-05-08T22:51:00+01:00</updated>
+    <id>http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf</id>
+    <content type="html"><![CDATA[<p>My first draft of this blog post ended up being really critical of Windows Presentation Foundation (WPF) but on reflection I think it is unfair to criticise the technology too much. The technology world has always been fast moving, but since WPF&#8217;s release in 2006 some major changes have happened. The iPhone (2007) and Chrome (2008) were released, challenging Microsoft&#8217;s dominance  over how people interact with computers. WPF has failed to keep up and I think people broadly agree that whilst a competent technology, it has many rough edges and hasn&#8217;t kept pace.</p>
+
+<p>For a project at work, I began looking for alternatives to WPF and when someone suggested HTML5 as a view technology, I made some marking criteria to compare it to WPF.</p>
+
+<h4>Had to have a great developer experience</h4>
+
+<p>Both technologies provide you with a way to declaratively build a UI. However, WPF really only provides you with Visual Studio to use as an editor. Visual Studio is great for working with other programmers but working with designers has always been a struggle. Designers don&#8217;t know XAML and Microsoft&#8217;s vision of designers living in Expression Blend and developers living in Visual Studio didn&#8217;t materialise. However, designers do know HTML and CSS and are comfortable using a text editor of their choice to build up mockups, why can&#8217;t those mockups be turned into real products?</p>
+
+<h4>Actively developed</h4>
+
+<p>WPF has only had Microsoft really get behind it, whereas there are numerous companies backing HTML5, all for their own reasons but pragmatically, it means that the rate of change is greater and the risk of stagnation is quite low.</p>
+
+<h4>Large ecosystem</h4>
+
+<p>HTML5 has a much broader user base than WPF as the Web has more appeal than traditional desktop software. This has meant that there is an active community built up around HTML5 and JavaScript. No more relying on Microsoft to provide the entire solution, now there are multiple components that can be glued together to build your solution. Choose from Knockout, AngularJS, Backbone etc. etc. and use whatever you think best suits your way of working and the problem at hand.</p>
+
+<h4>Skills for the future</h4>
+
+<p>Personally I think that everything is moving to the web. This is pretty much inevitable and it will only be certain kinds of software that will remain in the traditional desktop form that we may be more used to. I am writing this blog post using the Office Web Apps whilst listening to the Spotify Web Player, I think the decision between investing my time learning WPF/XAML versus HTML5 is clear for me.</p>
+
+<p>I have convinced myself that HTML5 is a suitable technology, but my day job project is a plugin for Visual Studio so doing a browser based application was out of the question. Does this mean that I am forced into sticking with WPF for now? In the next blog post I will talk about Chromium Embedded and how it provides a way for those of us writing desktop software to use modern technology.</p>
 ]]></content>
   </entry>
   
