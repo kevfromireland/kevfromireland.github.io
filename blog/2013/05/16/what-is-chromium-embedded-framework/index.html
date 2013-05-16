@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - Kevin Boyle</title>
+  <title>What is the Chromium Embedded Framework? - Kevin Boyle</title>
   <meta name="author" content="Kevin Boyle">
 
   
-  <meta name="description" content="Blog Archive 2013 What is the Chromium Embedded Framework?
-May 16 2013 posted in cef,, chrome,, html5 Can HTML5 Replace WPF?
-May 08 2013 About Me I' &hellip;">
+  <meta name="description" content="In my last post I outlined why I thought HTML5 is a better solution for building UIs than using WPF, however, my day job is building a plugin for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ May 08 2013 About Me I' &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kevinboyle.ie/blog/archives/">
+  <link rel="canonical" href="http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -82,45 +80,106 @@ May 08 2013 About Me I' &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">What Is the Chromium Embedded Framework?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-16T21:33:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>In my <a href="/blog/2013/05/08/can-html5-replace-wpf/">last post</a> I outlined why I thought HTML5 is a better solution for building UIs than using WPF, however, my day job is building a plugin for Visual Studio forcing me to use WPF. I have been using the Chromium Embedded Framework (CEF) to see if it will allow me to bring the advantages of HTML5 to my application in a way that makes sense for me.</p>
 
-  
-  <h2>2013</h2>
+<p>CEF is essentially the open source core of the Chrome web browser, repackaged as a library so you can include it in your own products. It allows you to host Chromium in your Windows, Mac or Linux application and has some very neat features that allow you to easily use HTML5 as the view layer in your application and still use whatever language or platform you want to actually build your application be it .NET,  Cocoa or Python.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/05/16/what-is-chromium-embedded-framework/">What is the Chromium Embedded Framework?</a></h1>
-<time datetime="2013-05-16T21:33:00+01:00" pubdate><span class='month'>May</span> <span class='day'>16</span> <span class='year'>2013</span></time>
+<p>Below is the what I have come to think of as the standard architecture of a CEF application. Notice that you don&#8217;t need to include any server component and you are still building traditional desktop software.</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cef/'>cef,</a>, <a class='category' href='/blog/categories/chrome/'>chrome,</a>, <a class='category' href='/blog/categories/html5/'>html5</a></span>
-</footer>
+<p><img src="/images/2013-05-16-what-is-cef-standard-arch.png" title="Standard Architecture of a CEF application" alt="Standard Architecture of a CEF application" /></p>
 
+<p>This architecture allows me to build my view in HTML5 whilst keeping the rest of my product and core business logic in the platform of my choosing, which for my current product is C#.</p>
 
-</article>
+<p>When I first starting using CEF at work, some people were skeptical. Most people&apos;s experience of building UIs using browser technologies is in front-end web development, and that can definitely be a frustrating experience.</p>
 
+<p>It seems that the most common annoyances when building a web application are brought on by the fact that you don&apos;t know which browser your user is going to be running. This leads to some challenges:</p>
 
+<p><strong><strong>Lowest Common Denominator</strong></strong>: You need to look at what browsers visitors to your site are likely to use and then build the site using the feature-set of that browser. For my team&#8217;s product site (<a href="http://vsnomad.com/">http://vsnomad.com/</a>), I think the oldest browser we realistically need to deal with is IE7 or IE8, but that still means you lose lots of the stuff that is really improving front end development like CSS3 and lightning fast JavaScript.</p>
 
-<article>
-  
-<h1><a href="/blog/2013/05/08/can-html5-replace-wpf/">Can HTML5 Replace WPF?</a></h1>
-<time datetime="2013-05-08T22:51:00+01:00" pubdate><span class='month'>May</span> <span class='day'>08</span> <span class='year'>2013</span></time>
+<p><strong><strong>Browser Incompatibility</strong></strong>: Even when you do choose a common set of features you can rely on, they often have subtle differences and quirks across browser implementations so it definitely isn&apos;t a case of write-once and then expect it to work in every browser.</p>
 
+<p>So, why the hell would you want to inflict this on your development? Ordinarily, people weigh up these frustrations against the fact that you can get your product to anyone on the internet without installs or any hassle.  Well, with CEF, you don&apos;t have to deal with any cross browser nonsense at all as you are shipping the browser so you completely control the environment. This means you know the user will be using a bleeding-edge  browser: the one you shipped to them. This has the nice bonus that you only need to test once.</p>
 
-</article>
+<p>So there you have it, CEF provides you a way to ensure that your users have a standards compliant, modern browser on their machine and provides you with a platform for building your entire app&#8217;s UI using HTML5.</p>
 
+<p>In the next post, I will look at how I have used the MVVM pattern, which is common in WPF codebases, with CEF.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Kevin Boyle</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-16T21:33:00+01:00" pubdate data-updated="true">May 16<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cef/'>cef,</a>, <a class='category' href='/blog/categories/chrome/'>chrome,</a>, <a class='category' href='/blog/categories/html5/'>html5</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework/" data-via="kevfromireland" data-counturl="http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/08/can-html5-replace-wpf/" title="Previous Post: Can HTML5 Replace WPF?">&laquo; Can HTML5 Replace WPF?</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>

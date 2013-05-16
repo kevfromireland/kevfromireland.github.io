@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html5 | Kevin Boyle]]></title>
+  <link href="http://kevinboyle.ie/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://kevinboyle.ie/"/>
+  <updated>2013-05-16T22:18:28+01:00</updated>
+  <id>http://kevinboyle.ie/</id>
+  <author>
+    <name><![CDATA[Kevin Boyle]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[What is the Chromium Embedded Framework?]]></title>
+    <link href="http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework/"/>
+    <updated>2013-05-16T21:33:00+01:00</updated>
+    <id>http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework</id>
+    <content type="html"><![CDATA[<p>In my <a href="/blog/2013/05/08/can-html5-replace-wpf/">last post</a> I outlined why I thought HTML5 is a better solution for building UIs than using WPF, however, my day job is building a plugin for Visual Studio forcing me to use WPF. I have been using the Chromium Embedded Framework (CEF) to see if it will allow me to bring the advantages of HTML5 to my application in a way that makes sense for me.</p>
+
+<p>CEF is essentially the open source core of the Chrome web browser, repackaged as a library so you can include it in your own products. It allows you to host Chromium in your Windows, Mac or Linux application and has some very neat features that allow you to easily use HTML5 as the view layer in your application and still use whatever language or platform you want to actually build your application be it .NET,  Cocoa or Python.</p>
+
+<p>Below is the what I have come to think of as the standard architecture of a CEF application. Notice that you don't need to include any server component and you are still building traditional desktop software.</p>
+
+<p><img src="/images/2013-05-16-what-is-cef-standard-arch.png" title="Standard Architecture of a CEF application" alt="Standard Architecture of a CEF application" /></p>
+
+<p>This architecture allows me to build my view in HTML5 whilst keeping the rest of my product and core business logic in the platform of my choosing, which for my current product is C#.</p>
+
+<p>When I first starting using CEF at work, some people were skeptical. Most people&apos;s experience of building UIs using browser technologies is in front-end web development, and that can definitely be a frustrating experience.</p>
+
+<p>It seems that the most common annoyances when building a web application are brought on by the fact that you don&apos;t know which browser your user is going to be running. This leads to some challenges:</p>
+
+<p><strong><strong>Lowest Common Denominator</strong></strong>: You need to look at what browsers visitors to your site are likely to use and then build the site using the feature-set of that browser. For my team's product site (<a href="http://vsnomad.com/">http://vsnomad.com/</a>), I think the oldest browser we realistically need to deal with is IE7 or IE8, but that still means you lose lots of the stuff that is really improving front end development like CSS3 and lightning fast JavaScript.</p>
+
+<p><strong><strong>Browser Incompatibility</strong></strong>: Even when you do choose a common set of features you can rely on, they often have subtle differences and quirks across browser implementations so it definitely isn&apos;t a case of write-once and then expect it to work in every browser.</p>
+
+<p>So, why the hell would you want to inflict this on your development? Ordinarily, people weigh up these frustrations against the fact that you can get your product to anyone on the internet without installs or any hassle.  Well, with CEF, you don&apos;t have to deal with any cross browser nonsense at all as you are shipping the browser so you completely control the environment. This means you know the user will be using a bleeding-edge  browser: the one you shipped to them. This has the nice bonus that you only need to test once.</p>
+
+<p>So there you have it, CEF provides you a way to ensure that your users have a standards compliant, modern browser on their machine and provides you with a platform for building your entire app's UI using HTML5.</p>
+
+<p>In the next post, I will look at how I have used the MVVM pattern, which is common in WPF codebases, with CEF.</p>
+]]></content>
+  </entry>
+  
+</feed>
