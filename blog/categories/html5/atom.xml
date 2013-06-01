@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html5 | Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/blog/categories/html5/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2013-05-16T22:18:28+01:00</updated>
+  <updated>2013-06-01T16:51:20+01:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -12,6 +12,59 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chromium Embedded, HTML5 Apps and using MVVM]]></title>
+    <link href="http://kevinboyle.ie/blog/2013/06/01/chromium-embedded-html5-apps-and-mvvm/"/>
+    <updated>2013-06-01T16:09:00+01:00</updated>
+    <id>http://kevinboyle.ie/blog/2013/06/01/chromium-embedded-html5-apps-and-mvvm</id>
+    <content type="html"><![CDATA[<p>This is part 3 in my series about building desktop software using web technologies and the Chromium Embedded Framework (CEF). In this post I will explore the code patterns that I have used when building desktop apps using CEF. I have created a sample project that shows this pattern in action which you can grab from <a href="https://github.com/kevfromireland/ChromiumEmbeddedAndMvvm" target="_blank">GitHub</a>.</p>
+
+<h3>What is MVVM?</h3>
+
+<p>A common pattern in building desktop software when using WPF is Model-View-ViewModel (MVVM) where you separate the view layer from the code that drives the behavior of that view. You then use data binding to tie the view and view model together. You can read the nitty-gritty on the pattern on <a href="http://en.wikipedia.org/wiki/Model_View_ViewModel" target="_blank">Wikipedia</a></p>
+
+<h3>MVVM and Chromium Embedded</h3>
+
+<p>Using CEF in your desktop software forces you to decouple your view from the core business logic of your software. The diagram shows how I have written my CEF apps so far:</p>
+
+<p><img class="center" src="/images/2013-06-01-standard-cef-mvvm.png"></p>
+
+<p><strong><strong>View</strong></strong>: The view in a CEF app is the DOM, the same as any web page. In the first apps that we built using CEF, we developed using HTML directly, but now we have switched to using Jade as a templating language to build the UI, but you can use the same approach that you normally use to building HTML.</p>
+
+<p><strong><strong>View Model</strong></strong>: The view models are written in JavaScript. We use <a href="http://www.knockoutjs.com" target="_blank">Knockout.js</a> to provide two way data-binding so that when something in our view model changes, the UI is updated and vice versa.</p>
+
+<p><strong><strong>Model</strong></strong>: We write the core of our apps in C# and bind objects that expose services on this model into the CEF frame at runtime. The view models can then call these services to interact with our model. My current product is a Visual Studio plugin, and some of the services we expose to our UI in that product allow our view to interact with the IDE and do things like start builds, open dialogs etc.</p>
+
+<h3>Advantages of the MVVM Pattern</h3>
+
+<p>The decoupling of the View and View Models from the Model mean that you can develop your UI in total isolation of your actual product. We achieve this by mocking out our model and services when we are running in a browser.</p>
+
+<pre>
+<code class="prettyprint">
+if (typeof ServiceProvidedWhenHostedInCef === 'undefined') {
+    ServiceProvidedWhenHostedInCef = {
+         SomeServiceFunc = function () {
+         }
+     }
+}
+</code>
+</pre>
+
+
+<p><strong><strong>Design Time Data</strong></strong>: Having your view models delegate to the model through service objects means that it is easy to replace them during development. The mocks can then populate your view with mock data that is easy to change as it is changing JSON so there is no compile cycle to go through.</p>
+
+<p><strong><strong>Tooling</strong></strong>: There are hundreds of editors to help you create HTML. You can use Visual Studio if you like to use an IDE, or simply use Sublime if you find you are more productive in something lighter. The feedback loop in your development becomes a tight cycle as you can use Chrome Dev Tools to do live editing. Being able to, at runtime and interactively, change the styles and position of your UI elements is such a time saver. No more recompiling the app just to see if the button looks better 4 pixels to the right.</p>
+
+<p><strong><strong>More Involved Designers</strong></strong>: This one might be more relevant to teams at my company than generallybut CEF allows your designers to start building shippable product. The toughest thing I face when doing UI development is that I have no sense of what looks good, at all. Every time I do UI work I get a nice structure in place and I think it looks good, and then for that final 10% I have to have the team&apos;s designer sitting over my shoulder telling me &apos;Add Whitespace&apos; ,&apos;move that down 10 pixels&apos; and generally torturing me. Don&apos;t get me wrong, I think it works and at the end I can see the difference and I can see that it is better, but I have no idea how to spot all those individual minor tweaks myself. I really want to be able to get the structure in place with some good design time data and then have the usability people do the final 10%. HTML and CSS are accessible enough that you don&apos;t need a software engineering background to make changes.</p>
+
+<h3>Next Time</h3>
+
+<p>Through these first 3 posts, I have given you an introduction to what motivated my investigation into replacing WPF and XAML with HTML5. We have also looked at how to structure your application and a popular pattern and some of the advantages that it brings.</p>
+
+<p>In the next post I will take you through how I have actually built some of the apps that are using CEF and get our hands dirty with some code.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What is the Chromium Embedded Framework?]]></title>
