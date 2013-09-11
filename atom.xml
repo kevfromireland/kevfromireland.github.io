@@ -4,7 +4,7 @@
   <title><![CDATA[Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2013-06-01T17:00:22+01:00</updated>
+  <updated>2013-09-11T22:48:05+01:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[User Notifications in the Visual Studio 2013 SDK]]></title>
+    <link href="http://kevinboyle.ie/blog/2013/09/11/user-notifications-in-the-visual-studio-2013-sdk/"/>
+    <updated>2013-09-11T22:15:00+01:00</updated>
+    <id>http://kevinboyle.ie/blog/2013/09/11/user-notifications-in-the-visual-studio-2013-sdk</id>
+    <content type="html"><![CDATA[<p>My day job involves a lot of integration with Microsoft IDEs, mostly SQL Server Management Studio and the various flavours of Visual Studio.</p>
+
+<p>Visual Studio 2013 RC has now been released so I can begin to explore some of the new features from an extensibility point of view.</p>
+
+<p>One of the more interesting additions is the concept of user notifications, which is a central location where Visual Studio can show you notifications around updates or anything else that might be relevant to you.</p>
+
+<p>This feature isn&#8217;t open for extensibility, but with the aid of <a href="http://www.red-gate.com/products/dotnet-development/reflector/">.NET Reflector</a> I was able to check out how this feature behaves.</p>
+
+<p>The main functionality is accessed via a new type that has been introduced:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>public interface IVsUserNotificationsManager
+</span><span class='line'>{
+</span><span class='line'>    IVsUserNotification AddUserNotification(Guid Provider, string Identifier, string Title, string Description, uint Severity, object Context, DateTime Expiration, bool isTransient);
+</span><span class='line'>    bool RemoveUserNotification(IVsUserNotification notification);
+</span><span class='line'>    void PromoteUserNotification(IVsUserNotification notification, uint Severity);
+</span><span class='line'>    IVsEnumUserNotifications GetUserNotifications(Guid Provider, uint filter, string Identifier);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To investigate how to use this new interface, I created a sample that fetches pictures from Reddit and adds them to the notification panel. You can find the source for this package on <a href="https://github.com/kevfromireland/visual-studio-2013-notifications-example">GitHub</a>. It is easy to follow and the Visual Studio team have done a good job of creating simple interfaces. Looking forward to when this gets opened up for extensibility.</p>
+
+<p>This is pure speculation, but I suspect the reason that Microsoft haven&#8217;t officially opened this up as an extensibility point is that notifications can be tiresome for a user and getting the experience just right so that they provide valuable information without being too spammy is a difficult balance. Please don&#8217;t use this feature in any extensions you write, I just hacked this sample together to show how it worked.</p>
+
+<p><img src="http://kevinboyle.ie/images/2013-09-11-visual-studio-2013-notifications.gif" title="Visual Studio with an IVsUserNotifications sample" alt="Reddit &amp; VS2013" /></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Chromium Embedded, HTML5 Apps and using MVVM]]></title>
