@@ -4,7 +4,7 @@
   <title><![CDATA[Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2013-09-11T22:48:05+01:00</updated>
+  <updated>2013-12-09T10:22:06+00:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -16,11 +16,11 @@
   <entry>
     <title type="html"><![CDATA[User Notifications in the Visual Studio 2013 SDK]]></title>
     <link href="http://kevinboyle.ie/blog/2013/09/11/user-notifications-in-the-visual-studio-2013-sdk/"/>
-    <updated>2013-09-11T22:15:00+01:00</updated>
+    <updated>2013-09-11T22:15:00+00:00</updated>
     <id>http://kevinboyle.ie/blog/2013/09/11/user-notifications-in-the-visual-studio-2013-sdk</id>
     <content type="html"><![CDATA[<p>My day job involves a lot of integration with Microsoft IDEs, mostly SQL Server Management Studio and the various flavours of Visual Studio.</p>
 
-<p>Visual Studio 2013 RC has now been released so I can begin to explore some of the new features from an extensibility point of view.</p>
+<p>Visual Studio 2013 has now been released so I can begin to explore some of the new features from an extensibility point of view.</p>
 
 <p>One of the more interesting additions is the concept of user notifications, which is a central location where Visual Studio can show you notifications around updates or anything else that might be relevant to you.</p>
 
@@ -55,7 +55,7 @@
   <entry>
     <title type="html"><![CDATA[Chromium Embedded, HTML5 Apps and using MVVM]]></title>
     <link href="http://kevinboyle.ie/blog/2013/06/01/chromium-embedded-html5-apps-and-mvvm/"/>
-    <updated>2013-06-01T16:09:00+01:00</updated>
+    <updated>2013-06-01T16:09:00+00:00</updated>
     <id>http://kevinboyle.ie/blog/2013/06/01/chromium-embedded-html5-apps-and-mvvm</id>
     <content type="html"><![CDATA[<p>This is part 3 in my series about building desktop software using web technologies and the Chromium Embedded Framework (CEF). In this post I will explore the code patterns that I have used when building desktop apps using CEF. I have created a sample project that shows this pattern in action which you can grab from <a href="https://github.com/kevfromireland/ChromiumEmbeddedAndMvvm" target="_blank">GitHub</a>.</p>
 
@@ -108,7 +108,7 @@ if (typeof ServiceProvidedWhenHostedInCef === 'undefined') {
   <entry>
     <title type="html"><![CDATA[What is the Chromium Embedded Framework?]]></title>
     <link href="http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework/"/>
-    <updated>2013-05-16T21:33:00+01:00</updated>
+    <updated>2013-05-16T21:33:00+00:00</updated>
     <id>http://kevinboyle.ie/blog/2013/05/16/what-is-chromium-embedded-framework</id>
     <content type="html"><![CDATA[<p>In my <a href="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/">last post</a> I outlined why I thought HTML5 is a better solution for building UIs than using WPF, however, my day job is building a plugin for Visual Studio forcing me to use WPF. I have been using the Chromium Embedded Framework (CEF) to see if it will allow me to bring the advantages of HTML5 to my application in a way that makes sense for me.</p>
 
@@ -139,7 +139,7 @@ if (typeof ServiceProvidedWhenHostedInCef === 'undefined') {
   <entry>
     <title type="html"><![CDATA[Can HTML5 Replace WPF?]]></title>
     <link href="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/"/>
-    <updated>2013-05-08T22:51:00+01:00</updated>
+    <updated>2013-05-08T22:51:00+00:00</updated>
     <id>http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf</id>
     <content type="html"><![CDATA[<p>My first draft of this blog post ended up being really critical of Windows Presentation Foundation (WPF) but on reflection I think it is unfair to criticise the technology too much. The technology world has always been fast moving, but since WPF&#8217;s release in 2006 some major changes have happened. The iPhone (2007) and Chrome (2008) were released, challenging Microsoft&#8217;s dominance  over how people interact with computers. WPF has failed to keep up and I think people broadly agree that whilst a competent technology, it has many rough edges and hasn&#8217;t kept pace.</p>
 
