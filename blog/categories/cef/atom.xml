@@ -4,7 +4,7 @@
   <title><![CDATA[Category: cef | Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/blog/categories/cef/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2014-05-12T08:59:09+00:00</updated>
+  <updated>2014-05-12T10:03:34+00:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -24,7 +24,7 @@
 
 <p>Apart from building a useful tool— feedback has been very positive so far, and people seem to be getting value from it —we also wanted to test technologies and methods relatively new to Red Gate before we added them to our established commercial products. We used lots of new technologies including CEF, OWIN and AngularJS to build a desktop product completely using web technologies, but still keep the tight Microsoft shell integration that users expect from us.</p>
 
-<p>Looking at what we managed to build in one week, we’re pretty happy. The code is solid considering the time constraint, and shows off some great techniques, like using CEF and <a href="http://documentation.red-gate.com/display/MA/SSMS+ecosystem+project">Red Gate's SSMS Integration Framework</a>. We also had the luxury of building on great open-source projects like JSON.NET, log4net, AngularJS, Ninject, and a hundred other NuGet and npm modules, so it’s pretty polished.</p>
+<p>Looking at what we managed to build in one week, we’re pretty happy. The code is well designed considering the time constraint, and shows off some great techniques, like using CEF and <a href="http://documentation.red-gate.com/display/MA/SSMS+ecosystem+project">Red Gate's SSMS Integration Framework</a>. We also had the luxury of building on great open-source projects like JSON.NET, log4net, AngularJS, Ninject, and a hundred other NuGet and npm modules, so it’s pretty polished.</p>
 
 <p>We thought SQL Scripts might prove a useful example for anyone who wants to build a Management Studio extension or even a “normal” desktop app using web technologies. I’m delighted to say we’re open-sourcing the entire codebase on <a href="https://github.com/red-gate/sql-scripts">GitHub</a> under the Apache licence. Hopefully, some of the code and techniques that we used will be useful in your own software. As always, pull requests are welcome. :)</p>
 ]]></content>
