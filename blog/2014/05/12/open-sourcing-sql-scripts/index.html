@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Can HTML5 Replace WPF? - Kevin Boyle</title>
+  <title>Open Sourcing SQL Scripts - Kevin Boyle</title>
   <meta name="author" content="Kevin Boyle">
 
   
-  <meta name="description" content="My first draft of this blog post ended up being really critical of Windows Presentation Foundation (WPF) but on reflection I think it is unfair to &hellip;">
+  <meta name="description" content="Working at Red Gate has many perks— obligatory we&#8217;re hiring plug)— but my favourite is Down Tools Week, when everyone stops working on their &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/">
+  <link rel="canonical" href="http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -84,7 +84,7 @@
   
   <header>
     
-      <h1 class="entry-title">Can HTML5 Replace WPF?</h1>
+      <h1 class="entry-title">Open Sourcing SQL Scripts</h1>
     
     
       <p class="meta">
@@ -100,34 +100,22 @@
   
 
 
-<time datetime="2013-05-08T22:51:00+00:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+<time datetime="2014-05-12T22:51:00+00:00" pubdate data-updated="true">May 12<span>th</span>, 2014</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>My first draft of this blog post ended up being really critical of Windows Presentation Foundation (WPF) but on reflection I think it is unfair to criticise the technology too much. The technology world has always been fast moving, but since WPF&#8217;s release in 2006 some major changes have happened. The iPhone (2007) and Chrome (2008) were released, challenging Microsoft&#8217;s dominance  over how people interact with computers. WPF has failed to keep up and I think people broadly agree that whilst a competent technology, it has many rough edges and hasn&#8217;t kept pace.</p>
+<div class="entry-content"><p>Working at Red Gate has many perks— obligatory <a href="http://www.red-gate.com/our-company/careers/current-opportunities/">we&#8217;re hiring</a> plug)— but my favourite is Down Tools Week, when everyone stops working on their normal stuff for a week and follows their curiosity. It’s a good chance to scratch a few itches: everything from fixing some bug that never gets prioritized to building a remote-controlled robot that crowdsources its movements over the internet.</p>
 
-<p>For a project at work, I began looking for alternatives to WPF and when someone suggested HTML5 as a view technology, I made some marking criteria to compare it to WPF.</p>
+<p>In the last Down Tools Week, I worked with a group of developers, designers and product managers to build a Management Studio extension that makes it easy to consume and share useful SQL snippets. It’s called SQL Scripts, and it’s backed by a repository of scripts on <a href="http://sqlservercentral.com/scripts">SQLServerCentral</a> which already has thousands of scripts to help SQL developers and DBAs.</p>
 
-<h4>Had to have a great developer experience</h4>
+<p>Apart from building a useful tool— feedback has been very positive so far, and people seem to be getting value from it —we also wanted to test technologies and methods relatively new to Red Gate before we added them to our established commercial products. We used lots of new technologies including CEF, OWIN and AngularJS to build a desktop product completely using web technologies, but still keep the tight Microsoft shell integration that users expect from us.</p>
 
-<p>Both technologies provide you with a way to declaratively build a UI. However, WPF really only provides you with Visual Studio to use as an editor. Visual Studio is great for working with other programmers but working with designers has always been a struggle. Designers don&#8217;t know XAML and Microsoft&#8217;s vision of designers living in Expression Blend and developers living in Visual Studio didn&#8217;t materialise. However, designers do know HTML and CSS and are comfortable using a text editor of their choice to build up mockups, why can&#8217;t those mockups be turned into real products?</p>
+<p>Looking at what we managed to build in one week, we’re pretty happy. The code is solid considering the time constraint, and shows off some great techniques, like using CEF and <a href="http://documentation.red-gate.com/display/MA/SSMS+ecosystem+project">Red Gate&#8217;s SSMS Integration Framework</a>. We also had the luxury of building on great open-source projects like JSON.NET, log4net, AngularJS, Ninject, and a hundred other NuGet and npm modules, so it’s pretty polished.</p>
 
-<h4>Actively developed</h4>
-
-<p>WPF has only had Microsoft really get behind it, whereas there are numerous companies backing HTML5, all for their own reasons but pragmatically, it means that the rate of change is greater and the risk of stagnation is quite low.</p>
-
-<h4>Large ecosystem</h4>
-
-<p>HTML5 has a much broader user base than WPF as the Web has more appeal than traditional desktop software. This has meant that there is an active community built up around HTML5 and JavaScript. No more relying on Microsoft to provide the entire solution, now there are multiple components that can be glued together to build your solution. Choose from Knockout, AngularJS, Backbone etc. etc. and use whatever you think best suits your way of working and the problem at hand.</p>
-
-<h4>Skills for the future</h4>
-
-<p>Personally I think that everything is moving to the web. This is pretty much inevitable and it will only be certain kinds of software that will remain in the traditional desktop form that we may be more used to. I am writing this blog post using the Office Web Apps whilst listening to the Spotify Web Player, I think the decision between investing my time learning WPF/XAML versus HTML5 is clear for me.</p>
-
-<p>I have convinced myself that HTML5 is a suitable technology, but my day job project is a plugin for Visual Studio so doing a browser based application was out of the question. Does this mean that I am forced into sticking with WPF for now? In the next blog post I will talk about Chromium Embedded and how it provides a way for those of us writing desktop software to use modern technology.</p>
+<p>We thought SQL Scripts might prove a useful example for anyone who wants to build a Management Studio extension or even a “normal” desktop app using web technologies. I’m delighted to say we’re open-sourcing the entire codebase on <a href="https://github.com/red-gate/sql-scripts">GitHub</a> under the Apache licence. Hopefully, some of the code and techniques that we used will be useful in your own software. As always, pull requests are welcome. :)</p>
 </div>
 
 
@@ -150,15 +138,21 @@
   
 
 
-<time datetime="2013-05-08T22:51:00+00:00" pubdate data-updated="true">May 8<span>th</span>, 2013</time>
+<time datetime="2014-05-12T22:51:00+00:00" pubdate data-updated="true">May 12<span>th</span>, 2014</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cef/'>cef</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/" data-via="kevfromireland" data-counturl="http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/" data-via="kevfromireland" data-counturl="http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/" >Tweet</a>
   
   
   
@@ -167,8 +161,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/09/11/user-notifications-in-the-visual-studio-2013-sdk/" title="Previous Post: User Notifications in the Visual Studio 2013 SDK">&laquo; User Notifications in the Visual Studio 2013 SDK</a>
       
-        <a class="basic-alignment right" href="/blog/2013/05/16/what-is-chromium-embedded-framework/" title="Next Post: What is the Chromium Embedded Framework?">What is the Chromium Embedded Framework? &raquo;</a>
       
     </p>
   </footer>
@@ -286,8 +280,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/';
-        var disqus_url = 'http://kevinboyle.ie/blog/2013/05/08/can-html5-replace-wpf/';
+        var disqus_identifier = 'http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/';
+        var disqus_url = 'http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -4,7 +4,7 @@
   <title><![CDATA[Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2014-05-12T08:55:35+00:00</updated>
+  <updated>2014-05-12T08:58:17+00:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Open Sourcing SQL Scripts]]></title>
+    <link href="http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts/"/>
+    <updated>2014-05-12T22:51:00+00:00</updated>
+    <id>http://kevinboyle.ie/blog/2014/05/12/open-sourcing-sql-scripts</id>
+    <content type="html"><![CDATA[<p>Working at Red Gate has many perks— obligatory <a href="http://www.red-gate.com/our-company/careers/current-opportunities/">we&#8217;re hiring</a> plug)— but my favourite is Down Tools Week, when everyone stops working on their normal stuff for a week and follows their curiosity. It’s a good chance to scratch a few itches: everything from fixing some bug that never gets prioritized to building a remote-controlled robot that crowdsources its movements over the internet.</p>
+
+<p>In the last Down Tools Week, I worked with a group of developers, designers and product managers to build a Management Studio extension that makes it easy to consume and share useful SQL snippets. It’s called SQL Scripts, and it’s backed by a repository of scripts on <a href="http://sqlservercentral.com/scripts">SQLServerCentral</a> which already has thousands of scripts to help SQL developers and DBAs.</p>
+
+<p>Apart from building a useful tool— feedback has been very positive so far, and people seem to be getting value from it —we also wanted to test technologies and methods relatively new to Red Gate before we added them to our established commercial products. We used lots of new technologies including CEF, OWIN and AngularJS to build a desktop product completely using web technologies, but still keep the tight Microsoft shell integration that users expect from us.</p>
+
+<p>Looking at what we managed to build in one week, we’re pretty happy. The code is solid considering the time constraint, and shows off some great techniques, like using CEF and <a href="http://documentation.red-gate.com/display/MA/SSMS+ecosystem+project">Red Gate&#8217;s SSMS Integration Framework</a>. We also had the luxury of building on great open-source projects like JSON.NET, log4net, AngularJS, Ninject, and a hundred other NuGet and npm modules, so it’s pretty polished.</p>
+
+<p>We thought SQL Scripts might prove a useful example for anyone who wants to build a Management Studio extension or even a “normal” desktop app using web technologies. I’m delighted to say we’re open-sourcing the entire codebase on <a href="https://github.com/red-gate/sql-scripts">GitHub</a> under the Apache licence. Hopefully, some of the code and techniques that we used will be useful in your own software. As always, pull requests are welcome. :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[User Notifications in the Visual Studio 2013 SDK]]></title>
