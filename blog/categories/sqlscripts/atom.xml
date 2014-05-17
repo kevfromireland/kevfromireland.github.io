@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sqlscripts | Kevin Boyle]]></title>
+  <link href="http://kevinboyle.ie/blog/categories/sqlscripts/atom.xml" rel="self"/>
+  <link href="http://kevinboyle.ie/"/>
+  <updated>2014-05-17T19:12:51+00:00</updated>
+  <id>http://kevinboyle.ie/</id>
+  <author>
+    <name><![CDATA[Kevin Boyle]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Discussing SQL Scripts]]></title>
+    <link href="http://kevinboyle.ie/blog/2014/05/17/discussing-sql-scripts/"/>
+    <updated>2014-05-17T19:51:00+00:00</updated>
+    <id>http://kevinboyle.ie/blog/2014/05/17/discussing-sql-scripts</id>
+    <content type="html"><![CDATA[<p>Here is a video from some of the team that built SQL Scripts describing how it works.</p>
+
+<iframe width="560" height="315" src="http://kevinboyle.ie//www.youtube.com/embed/KhxVCYSwqgI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+]]></content>
+  </entry>
+  
+</feed>
