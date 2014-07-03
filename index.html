@@ -127,7 +127,7 @@ This doesn’t work for Helios out of the box. I did some debugging, and got as 
 
 <p>When you publish your ASP.NET project to Azure Web Sites, it automatically adds three new <code>TraceListeners</code> to your app: <code>AzureDriveTraceListener</code>, <code>AzureTableTraceListener</code> and <code>AzureBlobTraceListener</code>. These <code>TraceListener</code> types all exist in the <code>Microsoft.WindowsAzure.WebSites.Diagnostics.dll</code> assembly which I can’t find reference to anywhere online so it must not be in the open sourced part of Azure Web Sites. You can download it from your Azure Web Site using the sample project I have in <a href="https://github.com/kevfromireland/helios-with-logging">GitHub</a>.</p>
 
-<p>Azure Web Sites doesn’t seem to have full support for Helios hosted apps yet, so won’t do the automatic injection of the listeners. This is easy to fix by including the following in your <code>web.config</code>:</p>
+<p>Azure Web Sites doesn’t seem to have full support for Helios hosted apps yet, so won’t do the automatic injection of the listeners. This is easy to fix by including the following in your <code>web.config</code></p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
