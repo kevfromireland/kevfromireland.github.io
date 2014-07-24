@@ -4,7 +4,7 @@
   <title><![CDATA[Category: azure | Kevin Boyle]]></title>
   <link href="http://kevinboyle.ie/blog/categories/azure/atom.xml" rel="self"/>
   <link href="http://kevinboyle.ie/"/>
-  <updated>2014-07-03T14:34:18+00:00</updated>
+  <updated>2014-07-24T14:36:42+00:00</updated>
   <id>http://kevinboyle.ie/</id>
   <author>
     <name><![CDATA[Kevin Boyle]]></name>
@@ -14,13 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Enable Azure Web Site Logging when using OWIN & Helios]]></title>
+    <title type="html"><![CDATA[Enable Azure Web Sites logging when using OWIN and Helios]]></title>
     <link href="http://kevinboyle.ie/blog/2014/07/03/enable-azure-web-site-logging-when-using-owin-and-helios/"/>
     <updated>2014-07-03T14:00:00+00:00</updated>
     <id>http://kevinboyle.ie/blog/2014/07/03/enable-azure-web-site-logging-when-using-owin-and-helios</id>
-    <content type="html"><![CDATA[<blockquote><p>tl;dr: If you want logging to work with Helios, you will need to add some things to your web.config. Snippet at the bottom of this article.</p></blockquote>
+    <content type="html"><![CDATA[<blockquote><p>tl;dr: If you want logging to work with Helios, you need to add some things to your web.config. Snippet at the bottom of this article.</p></blockquote>
 
-<p>For a project at work, I am using Helios to host a small ASP.NET Web API on Azure Web Sites. If that sentence doesn’t make sense to you then you might need to do some reading before moving on:</p>
+<p>For a project at work, I’m using Helios to host a small ASP.NET Web API on Azure Web Sites. If that sentence doesn’t make sense, you might need to do some extra reading first:</p>
 
 <ul>
 <li><p><a href="http://blogs.msdn.com/b/webdev/archive/2014/02/18/introducing-asp-net-project-helios.aspx">What is Helios?</a></p></li>
@@ -28,12 +28,12 @@
 </ul>
 
 
-<p>This setup has worked really well for us. Using OWIN with Web API hosted on IIS via Helios allows us to have a small amount of code to get the API running, and critically for me, it is all clear without any magic or side effects from using a large framework.</p>
+<p>This setup works really well for us. Using OWIN with Web API hosted on IIS via Helios means we have a small amount of code to get the API running. Not only is the code small, it’s succinct and clear, because we don't rely on large frameworks with side-effects and magic conventions.</p>
 
-<p>One of the nicer features of Azure Web Sites is the easy to use logging. Application logging via the <code>System.Diagnostics.Trace</code> type will automatically get added to Azure Tables, Blob Storage and be available via the Kudu Log Streaming Service.
-This doesn’t work for Helios out of the box. I did some debugging, and got as far as I needed to fix the bug, without fully understanding the issue as I couldn’t find the relevant code in Kudu. If anyone knows exactly why this doesn’t work out of the box I would love to know.</p>
+<p>Azure Web Sites provides easy to use logging. Application logging via the System.Diagnostics.Trace type is added automatically to Azure Tables and Blob Storage, and it’s then available via the Kudu Log Streaming Service.
+This doesn’t work for Helios out of the box. I did some debugging, and got as far as I needed to fix the bug without fully understanding the issue, as I couldn’t find the relevant code in Kudu. If anyone knows exactly why this doesn’t work out of the box, I’d love to know.</p>
 
-<p>When you publish your ASP.NET project to Azure Web Sites, it automatically adds three new <code>TraceListeners</code> to your app: <code>AzureDriveTraceListener</code>, <code>AzureTableTraceListener</code> and <code>AzureBlobTraceListener</code>. These <code>TraceListener</code> types all exist in the <code>Microsoft.WindowsAzure.WebSites.Diagnostics.dll</code> assembly which I can’t find reference to anywhere online so it must not be in the open sourced part of Azure Web Sites. You can download it from your Azure Web Site using the sample project I have in <a href="https://github.com/kevfromireland/helios-with-logging">GitHub</a>.</p>
+<p>When you publish your ASP.NET project to Azure Web Sites, it automatically adds three new <code>TraceListeners</code> to your app: <code>AzureDriveTraceListener</code>, <code>AzureTableTraceListener</code> and <code>AzureBlobTraceListener</code>. These <code>TraceListener</code> types all exist in the <code>Microsoft.WindowsAzure.WebSites.Diagnostics.dll</code> assembly. I can’t find any reference to the assembly online, so it must not be in the open-sourced part of Azure Web Sites. You can download it from your Azure Web Site using the sample project I have in <a href="https://github.com/kevfromireland/helios-with-logging">GitHub</a>.</p>
 
 <p>Azure Web Sites doesn’t seem to have full support for Helios hosted apps yet, so won’t do the automatic injection of the listeners. This is easy to fix by including the following in your <code>web.config</code></p>
 
@@ -60,9 +60,7 @@ This doesn’t work for Helios out of the box. I did some debugging, and got as 
 </span><span class='line'>
 </span><span class='line'>&lt;p>&lt;/system.diagnostics></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Now you will have full application logging support in Azure Web Sites as if you were using a ‘real’ ASP.NET project.</p>
-
-<p>Hopefully this helps you not need to do the three hours of debugging I did today.</p>
+<p>Now you will have full application logging support in Azure Web Sites as if you were using a ‘real’ ASP.NET project. Hopefully this will help you avoid the three hours of debugging I did today.</p>
 ]]></content>
   </entry>
   
